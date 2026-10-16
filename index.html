@@ -1,0 +1,351 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Pratibha Devi — Graphic Designer · Portfolio 2026</title>
+  <meta name="description" content="Pratibha Devi is a Hyderabad-based graphic designer working across brand identity, illustration, UI/UX, packaging, print and game assets.">
+  <meta name="theme-color" content="#F3F0E8">
+  <meta property="og:title" content="Pratibha Devi — Portfolio 2026">
+  <meta property="og:description" content="Selected works for Graphic Design, Illustration & UI Design.">
+  <meta property="og:image" content="assets/img/portrait.webp">
+  <meta property="og:type" content="website">
+  <link rel="icon" type="image/webp" href="assets/img/flower-red.webp">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Allura&family=Inter:wght@400;500;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="assets/img/portrait.webp">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="is-loading">
+
+<!-- ============ LOADER ============ -->
+<div class="loader" id="loader" aria-hidden="true">
+  <div class="loader__orb">
+    <img src="assets/img/doodle-rays.webp" alt="" class="loader__rays">
+    <span class="loader__sun"></span>
+  </div>
+  <p class="loader__name script">Pratibha</p>
+  <p class="loader__count"><span id="loaderCount">0</span>%</p>
+</div>
+
+<!-- ============ ATMOSPHERE ============ -->
+<div class="grain" aria-hidden="true"></div>
+<canvas class="motes" id="motes" aria-hidden="true"></canvas>
+<div class="cursor" aria-hidden="true"><span class="cursor__dot"></span><span class="cursor__ring"><em>Open</em></span></div>
+
+<!-- ============ NAV ============ -->
+<header class="nav" id="nav">
+  <nav class="nav__pill" aria-label="Primary">
+    <a href="#home" class="nav__link is-active" data-nav="home">Home</a>
+    <a href="#services" class="nav__link" data-nav="services">Services</a>
+    <a href="#about" class="nav__link" data-nav="about">About Me</a>
+    <a href="#projects" class="nav__link" data-nav="projects">Projects</a>
+    <span class="nav__glow" aria-hidden="true"></span>
+  </nav>
+  <a href="#contact" class="nav__contact magnetic" data-nav="contact">Contact</a>
+  <button class="nav__burger" id="burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
+</header>
+
+<div class="menu" id="menu" aria-hidden="true">
+  <img src="assets/img/orb-red.webp" alt="" class="menu__orb">
+  <img src="assets/img/doodle-rays.webp" alt="" class="menu__rays">
+  <ul>
+    <li><a href="#home" class="script">Home</a></li>
+    <li><a href="#services" class="script">Services</a></li>
+    <li><a href="#about" class="script">About Me</a></li>
+    <li><a href="#projects" class="script">Projects</a></li>
+    <li><a href="#contact" class="script">Contact</a></li>
+  </ul>
+  <a class="menu__mail" href="mailto:pratibha10121999@gmail.com">pratibha10121999@gmail.com</a>
+</div>
+
+<main id="smooth">
+
+<!-- ============ 1 · LANDING ============ -->
+<section class="hero" id="home">
+  <img src="assets/img/sparkle-red.webp" alt="" class="deco hero__spark hero__spark--a twinkle">
+  <img src="assets/img/sparkle-red.webp" alt="" class="deco hero__spark hero__spark--b twinkle" style="--d:1.2s">
+
+  <div class="hero__text">
+    <p class="hero__year" data-reveal>2026</p>
+    <h1 class="hero__title" aria-label="Portfolio">
+      <span class="hero__port" aria-hidden="true"><span>P</span><span>o</span><span>r</span><span>t</span></span>
+      <span class="hero__folio script" aria-hidden="true">folio</span>
+    </h1>
+    <p class="hero__sub" data-reveal>
+      Selected Works For<br>
+      <strong>Graphic Design<br>Illustration<br>&amp; UI Design</strong>
+    </p>
+  </div>
+
+  <div class="beadline hero__beads" aria-hidden="true"><i></i><i class="r"></i><i></i><i></i></div>
+
+  <div class="hero__art" data-tilt>
+    <img src="assets/img/orb-grey.webp" alt="" class="deco hero__orbit-orb float" style="--d:.4s">
+    <img src="assets/img/crystal-grey.webp" alt="" class="deco hero__crystal-g float" style="--d:1s">
+    <img src="assets/img/crystal-red.webp" alt="" class="deco hero__crystal-r float" style="--d:2s">
+    <div class="hero__portrait">
+      <img src="assets/img/portrait.webp" alt="Illustrated portrait of Pratibha Devi with glasses, a red flower in her braided hair and a red sun behind her" width="1100" height="1468">
+    </div>
+    <img src="assets/img/sparkle-grey.webp" alt="" class="deco hero__spark-g twinkle" style="--d:.6s">
+  </div>
+
+  <div class="marquee hero__marquee" data-speed="1">
+    <div class="marquee__track">
+      <span>Welcome To My Portfolio</span><img src="assets/img/flower-red.webp" alt=""><img src="assets/img/leaf.webp" alt="" class="leaf">
+      <span>Welcome To My Portfolio</span><img src="assets/img/flower-red.webp" alt=""><img src="assets/img/leaf.webp" alt="" class="leaf">
+      <span>Welcome To My Portfolio</span><img src="assets/img/flower-red.webp" alt=""><img src="assets/img/leaf.webp" alt="" class="leaf">
+      <span>Welcome To My Portfolio</span><img src="assets/img/flower-red.webp" alt=""><img src="assets/img/leaf.webp" alt="" class="leaf">
+    </div>
+  </div>
+</section>
+
+<!-- ============ 2 · ABOUT ============ -->
+<section class="about" id="about">
+  <img src="assets/img/cloud.webp" alt="" class="deco about__cloud drift">
+  <img src="assets/img/moon.webp" alt="" class="deco about__moon float" style="--d:.8s">
+
+  <div class="about__grid">
+    <div class="about__portrait" data-parallax="-0.08">
+      <div class="beadline about__beads" aria-hidden="true"><i></i><i class="r"></i><i></i></div>
+      <img src="assets/img/portrait.webp" alt="" loading="lazy">
+      <img src="assets/img/crystal-red.webp" alt="" class="deco about__crystal float" style="--d:1.4s">
+    </div>
+
+    <div class="about__main">
+      <p class="eyebrow" data-reveal><span></span>About Me</p>
+      <h2 class="about__name script" data-write>Pratibha Devi</h2>
+      <img src="assets/img/sparkle-red.webp" alt="" class="deco about__spark twinkle">
+      <h3 class="about__role" data-reveal>Graphic Designer</h3>
+      <p class="about__bio" data-reveal>A Detail-Oriented Graphic Designer With 3+ Years Across Brand Identity, UI/UX, Game Assets, 3D Modeling, Packaging And Print. I Lead Cross-Functional Teams, Use AI Design Tools Well, And Deliver Clean, High-Conversion Visual Systems</p>
+
+      <p class="about__feel" data-reveal>Design That Makes You Feel</p>
+      <ul class="feel-row" data-stagger>
+        <li><img src="assets/img/icon-joy.webp" alt=""><span>Joy</span></li>
+        <li><img src="assets/img/icon-love.webp" alt=""><span>Love</span></li>
+        <li><img src="assets/img/icon-calm.webp" alt=""><span>Calm</span></li>
+        <li><img src="assets/img/icon-insight.webp" alt=""><span>Insight</span></li>
+      </ul>
+    </div>
+
+    <div class="beadline about__divider" aria-hidden="true"><i></i><i class="r"></i><i></i></div>
+
+    <div class="about__exp">
+      <p class="eyebrow" data-reveal><span></span>Experience</p>
+      <ol class="timeline" data-stagger>
+        <li class="is-now"><small>2025 - 2026</small><strong>Designer</strong><em>Ergon Xlu</em></li>
+        <li><small>2024 - 2025</small><strong>Designer</strong><em>Adel &amp; Vida</em></li>
+        <li><small>2023 - 2024</small><strong>Junior Designer</strong><em>Squarewood Agency</em></li>
+      </ol>
+      <img src="assets/img/crystal-red.webp" alt="" class="deco about__crystal2 float" style="--d:.3s">
+      <img src="assets/img/diamond.webp" alt="" class="deco about__diamond float" style="--d:1.7s">
+    </div>
+  </div>
+
+  <div class="skills" id="services">
+    <div class="skills__col">
+      <h4 class="skills__title"><span></span>Design</h4>
+      <ul class="pills" data-stagger>
+        <li>Visual Design</li><li>Branding</li><li>Logo design</li><li>UI / UX</li><li>Packaging</li><li>Social Media</li><li>Print designing</li><li>Typography &amp; color</li>
+      </ul>
+    </div>
+    <div class="skills__col">
+      <h4 class="skills__title"><span></span>Tools</h4>
+      <ul class="pills" data-stagger>
+        <li>Figma</li><li>Photoshop</li><li>Illustrator</li><li>InDesign</li><li>Blender 3D</li><li>Spine 2D</li><li>Canva</li><li>Corel Draw</li>
+      </ul>
+    </div>
+    <div class="skills__col">
+      <h4 class="skills__title"><span></span>Web, AI &amp; Teams</h4>
+      <ul class="pills" data-stagger>
+        <li>WordPress</li><li>WooCommerce</li><li>AI design tools</li><li>AI workflows</li><li>Cross-functional leadership</li>
+      </ul>
+    </div>
+    <img src="assets/img/sparkle-grey.webp" alt="" class="deco skills__spark twinkle">
+    <div class="skills__sun" aria-hidden="true"><img src="assets/img/doodle-rays.webp" alt=""><span></span></div>
+  </div>
+</section>
+
+<!-- ============ 3 · CONTENT / PROJECTS ============ -->
+<section class="content" id="projects">
+  <div class="beadline content__beads content__beads--l" aria-hidden="true"><i></i><i class="r"></i><i></i></div>
+  <div class="beadline content__beads content__beads--r" aria-hidden="true"><i></i><i></i><i></i></div>
+
+  <div class="content__scene">
+    <img src="assets/img/cloud-storm.webp" alt="" class="deco content__cloud1 drift">
+    <img src="assets/img/cloud.webp" alt="" class="deco content__cloud2 drift" style="--d:3s">
+    <img src="assets/img/moon.webp" alt="" class="deco content__moon float">
+    <img src="assets/img/neuron.webp" alt="" class="deco content__neuron float" style="--d:1s">
+    <div class="content__sun" data-parallax="0.06">
+      <img src="assets/img/doodle-rays.webp" alt="" class="content__rays">
+      <img src="assets/img/orb-red.webp" alt="" class="content__orb">
+    </div>
+    <img src="assets/img/face-right.webp" alt="" class="deco content__face" data-parallax="-0.05">
+    <img src="assets/img/ribbon.webp" alt="" class="deco content__ribbon" data-parallax="0.1">
+    <img src="assets/img/hand-receiving.webp" alt="" class="deco content__hand" data-parallax="-0.04">
+    <h2 class="content__title script" data-write>Content</h2>
+    <p class="content__tag">Think Beyond</p>
+    <img src="assets/img/crystal-red.webp" alt="" class="deco content__crystal-r float" style="--d:.5s">
+    <img src="assets/img/crystal-grey.webp" alt="" class="deco content__crystal-g float" style="--d:1.5s">
+    <img src="assets/img/sparkle-red.webp" alt="" class="deco content__spark twinkle">
+    <a href="#work" class="btn btn--dark content__more magnetic">See More <i class="btn__ic btn__ic--down"></i></a>
+  </div>
+
+  <div class="marquee marquee--work" data-speed="-1">
+    <div class="marquee__track">
+      <span>Open The Card To See The Work</span><img src="assets/img/flower-red.webp" alt="">
+      <span>Open The Card To See The Work</span><img src="assets/img/flower-red.webp" alt="">
+      <span>Open The Card To See The Work</span><img src="assets/img/flower-red.webp" alt="">
+      <span>Open The Card To See The Work</span><img src="assets/img/flower-red.webp" alt="">
+    </div>
+  </div>
+
+  <div class="work" id="work">
+    <ul class="work__labels" id="workLabels" aria-label="Projects"></ul>
+    <div class="fan" id="fan" role="listbox" aria-label="Project cards — use arrow keys, Enter opens">
+      <img src="assets/img/sparkle-red.webp" alt="" class="deco fan__spark twinkle">
+      <img src="assets/img/orb-grey.webp" alt="" class="deco fan__orb float">
+      <img src="assets/img/diamond.webp" alt="" class="deco fan__diamond float" style="--d:1s">
+    </div>
+    <div class="fan__controls">
+      <button class="fan__arrow" id="fanPrev" aria-label="Previous project">&larr;</button>
+      <p class="fan__hint"><span id="fanIndex">01</span> <i></i> 07</p>
+      <button class="fan__arrow" id="fanNext" aria-label="Next project">&rarr;</button>
+    </div>
+  </div>
+
+  <div class="feelings">
+    <span class="feelings__dash"></span>
+    <p class="eyebrow eyebrow--center" data-reveal>Every Project Begins With A Feeling</p>
+    <p class="feelings__sub" data-reveal>Joy, calm, curiosity — the work is made to be felt.</p>
+    <ul class="feel-row feel-row--wide" data-stagger>
+      <li><img src="assets/img/icon-joy.webp" alt=""><span>Joy</span></li>
+      <li><img src="assets/img/icon-sadness.webp" alt=""><span>Sadness</span></li>
+      <li><img src="assets/img/icon-anger.webp" alt=""><span>Anger</span></li>
+      <li><img src="assets/img/icon-fear.webp" alt=""><span>Fear</span></li>
+      <li><img src="assets/img/icon-love.webp" alt=""><span>Love</span></li>
+      <li><img src="assets/img/icon-calm.webp" alt=""><span>Calm</span></li>
+    </ul>
+    <div class="pool">
+      <div class="ripples" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+      <button class="btn btn--red feelings__all magnetic" id="viewAll">View All Projects</button>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 4 · CONTACT ============ -->
+<section class="contact" id="contact">
+  <div class="connect">
+    <img src="assets/img/cloud.webp" alt="" class="deco connect__cloud1 drift">
+    <img src="assets/img/cloud.webp" alt="" class="deco connect__cloud2 drift" style="--d:2s">
+    <img src="assets/img/face-right.webp" alt="" class="deco connect__face connect__face--l">
+    <img src="assets/img/face-right.webp" alt="" class="deco connect__face connect__face--r">
+    <img src="assets/img/hand-reaching.webp" alt="" class="deco connect__hand connect__hand--l">
+    <img src="assets/img/hand-reaching.webp" alt="" class="deco connect__hand connect__hand--r">
+    <img src="assets/img/sparkle-red.webp" alt="" class="deco connect__spark twinkle">
+    <img src="assets/img/sparkle-grey.webp" alt="" class="deco connect__spark2 twinkle" style="--d:1s">
+
+    <p class="eyebrow eyebrow--center eyebrow--both" data-reveal><span></span>Contact<span></span></p>
+    <h2 class="connect__title script" data-write>Let’s Connect</h2>
+    <p class="connect__sub" data-reveal>Tell me what you’re building: a brand, an app, a launch campaign.<br>I’ll reply within 24 hours with ideas, a timeline and a quote.</p>
+    <a href="#form" class="btn btn--dark connect__cta magnetic">Start A Conversation <i class="btn__ic"></i></a>
+    <div class="connect__sun" aria-hidden="true"><img src="assets/img/doodle-rays.webp" alt=""><span></span></div>
+  </div>
+
+  <div class="together" id="form">
+    <div class="together__intro">
+      <p class="eyebrow" data-reveal><span></span>Contact</p>
+      <h3 class="together__title script" data-write>Let’s Work Together.</h3>
+      <p class="together__sub" data-reveal>Open to senior visual design, UI/UX and brand leadership roles, and to freelance projects. I reply within a day.</p>
+      <div class="together__lotus" aria-hidden="true">
+        <img src="assets/img/lotus.webp" alt="" class="float">
+        <div class="ripples ripples--small"><i></i><i></i><i></i></div>
+      </div>
+      <dl class="info" data-reveal>
+        <div><dt>Email</dt><dd><a href="mailto:pratibha10121999@gmail.com">pratibha10121999<span>@gmail.com</span></a></dd></div>
+        <div><dt>Based In</dt><dd>Hyderabad, India · <span id="ist">12:07</span> IST</dd></div>
+        <div><dt>Works</dt><dd>On-site in Hyderabad<small>Remote worldwide</small></dd></div>
+      </dl>
+    </div>
+
+    <div class="beadline together__divider" aria-hidden="true"><i></i><i class="r"></i><i></i></div>
+
+    <form class="form" id="contactForm" novalidate data-reveal>
+      <img src="assets/img/sparkle-red.webp" alt="" class="form__spark twinkle">
+      <p class="form__title">I’m Reaching Out About</p>
+      <div class="chips" role="radiogroup" aria-label="Reason">
+        <button type="button" class="chip is-on" role="radio" aria-checked="true">A New Project</button>
+        <button type="button" class="chip" role="radio" aria-checked="false">A Design Role</button>
+        <button type="button" class="chip" role="radio" aria-checked="false">Just Saying hi</button>
+      </div>
+      <div class="form__grid">
+        <label>Name<input name="name" autocomplete="name"></label>
+        <label>Email<input name="email" type="email" autocomplete="email"></label>
+        <label>Phone<input name="phone" type="tel" autocomplete="tel"></label>
+        <label>Company or Link<input name="company"></label>
+        <label class="full">Message*<textarea name="message" rows="6" required></textarea></label>
+      </div>
+      <div class="form__foot">
+        <small>* required</small>
+        <button class="btn btn--red magnetic" type="submit">Send Message <i class="btn__ic"></i></button>
+      </div>
+      <p class="form__note" id="formNote" role="status"></p>
+    </form>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="footer__tabs" aria-hidden="true"><span></span><span></span></div>
+  <div class="footer__body">
+    <div class="footer__rays" aria-hidden="true"></div>
+    <img src="assets/img/moon.webp" alt="" class="deco footer__moon float">
+    <img src="assets/img/sparkle-grey.webp" alt="" class="deco footer__spark1 twinkle">
+    <img src="assets/img/sparkle-red.webp" alt="" class="deco footer__spark2 twinkle" style="--d:.8s">
+    <img src="assets/img/sparkle-grey.webp" alt="" class="deco footer__spark3 twinkle" style="--d:1.6s">
+    <span class="footer__dot footer__dot--1"></span><span class="footer__dot footer__dot--2"></span>
+
+    <div class="footer__info">
+      <p class="eyebrow eyebrow--red">Contact</p>
+      <h2 class="footer__title">© 2026 Pratibha Devi<br>Visual Designer,<br>Hyderabad</h2>
+      <p class="footer__text">Open to senior visual design, UI/UX and brand leadership roles, and to freelance projects.<br>I reply within a day.</p>
+      <a href="mailto:pratibha10121999@gmail.com" class="footer__mail magnetic">pratibha10121999@gmail.com <i class="btn__ic"></i></a>
+      <nav class="footer__nav" aria-label="Footer">
+        <a href="#home">Home</a><a href="#services">Services</a><a href="#about">About Me</a><a href="#projects">Projects</a><a href="#contact" class="is-red">Contact</a>
+      </nav>
+      <p class="footer__sign script">Pratibha Devi</p>
+    </div>
+
+    <div class="beadline footer__beads" aria-hidden="true"><i></i><i class="r"></i><i></i></div>
+
+    <div class="footer__art" aria-hidden="true">
+      <span class="footer__sun"></span>
+      <img src="assets/img/face-left-calm.webp" alt="" class="footer__face">
+    </div>
+  </div>
+</footer>
+</main>
+
+<!-- ============ PROJECT PANEL ============ -->
+<div class="panel" id="panel" role="dialog" aria-modal="true" aria-labelledby="panelTitle" aria-hidden="true">
+  <div class="panel__veil"></div>
+  <article class="panel__sheet" id="panelSheet" data-lenis-prevent></article>
+</div>
+
+<!-- ============ ALL PROJECTS ============ -->
+<div class="index" id="index" role="dialog" aria-modal="true" aria-label="All projects" aria-hidden="true">
+  <button class="index__close" id="indexClose" aria-label="Close">&times;</button>
+  <p class="eyebrow eyebrow--center"><span></span>All Projects<span></span></p>
+  <h2 class="index__title script">Selected Works</h2>
+  <ul class="index__grid" id="indexGrid"></ul>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js" defer></script>
+<script src="js/projects.js" defer></script>
+<script src="js/main.js" defer></script>
+</body>
+</html>
