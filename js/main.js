@@ -81,10 +81,29 @@
       .from('.hero__port span', { yPercent: 70, opacity: 0, filter: 'blur(14px)', duration: 1.6, stagger: .09 })
       .fromTo('.hero__folio', { clipPath: 'inset(-20% 100% -40% 0)' }, { clipPath: 'inset(-20% -10% -40% 0)', duration: 2, ease: 'power2.inOut' }, '-=1.1')
       .from('.hero__year, .hero__sub', { y: 24, opacity: 0, filter: 'blur(8px)', duration: 1.2, stagger: .12 }, '-=1.6')
-      .fromTo('.hero__portrait', { clipPath: 'inset(100% 0 0 0 round 300px 300px 0 0)', y: 60 }, { clipPath: 'inset(0% 0 0 0 round 0px 0px 0 0)', y: 0, duration: 2, ease: 'expo.inOut' }, 0)
+      .add(pzIntro($('.hero .pz')), 0)
       .from('.hero .deco, .hero__beads', { scale: 0, opacity: 0, duration: 1.4, stagger: .08, ease: 'back.out(2)' }, .8)
       .from('.hero__marquee', { yPercent: 100, duration: 1.4 }, .6)
       .from('.nav', { y: -40, opacity: 0, duration: 1.2 }, .9);
+  }
+
+  /* ---------------------------------------------------------- layered portrait: assembles itself */
+  function pzIntro(root, opts = {}) {
+    const tl = gsap.timeline({ defaults: { ease: 'expo.out' }, ...opts });
+    if (!root) return tl;
+    const q = s => root.querySelectorAll(s);
+    tl.from(q('.pz-arch'), { yPercent: 10, opacity: 0, duration: 1.8 }, 0)
+      .from(q('.pz-aura'), { opacity: 0, duration: 2.2 }, .2)
+      .from(q('.pz-orb, .pz-glow'), { yPercent: 70, scale: .55, opacity: 0, duration: 2.6 }, .25)   // sunrise
+      .from(q('.pz-rays'), { scale: .3, rotate: -70, opacity: 0, duration: 2.6 }, .6)
+      .from(q('.pz-thread'), { scaleY: 0, transformOrigin: '50% 0%', duration: 1.8, ease: 'power3.inOut' }, .3)
+      .from(q('.pz__fig'), { yPercent: 5, opacity: 0, filter: 'blur(14px)', duration: 2.1, clearProps: 'filter' }, .45)
+      .from(q('.pz-flower'), { scale: 0, rotate: -200, duration: 2, ease: 'back.out(1.5)' }, 1.3)       // bloom
+      .from(q('.pz-leaf'), { scale: 0, rotate: 60, transformOrigin: '96% 62%', duration: 1.7, ease: 'back.out(1.6)' }, 1.55)
+      .from(q('.pz-earring'), { yPercent: -70, opacity: 0, duration: 1.8, stagger: .18, ease: 'elastic.out(1, .4)' }, 1.4)
+      .from(q('.pz-bead'), { yPercent: -140, opacity: 0, duration: 1.5, stagger: .12 }, 1)
+      .from(q('.pz-float, .pz-sparkle'), { scale: 0, opacity: 0, duration: 1.3, stagger: .06, ease: 'back.out(2)' }, 1.2);
+    return tl;
   }
 
   /* ---------------------------------------------------------- nav */
@@ -192,19 +211,19 @@
       });
     });
 
-    // portrait tilt
-    const art = $('[data-tilt] .hero__portrait');
-    const hero = $('.hero');
-    if (art && hasGsap) {
-      const rxTo = gsap.quickTo(art, 'rotationY', { duration: 1.4, ease: 'power3' });
-      const ryTo = gsap.quickTo(art, 'rotationX', { duration: 1.4, ease: 'power3' });
-      hero.addEventListener('pointermove', e => {
-        const r = hero.getBoundingClientRect();
-        rxTo(((e.clientX - r.left) / r.width - .5) * 8);
-        ryTo(-((e.clientY - r.top) / r.height - .5) * 6);
+    // portrait layers drift at different depths with the pointer
+    ['.hero', '.about'].forEach(sel => {
+      const sec = $(sel), pz = sec && $('.pz', sec);
+      if (!pz) return;
+      sec.addEventListener('pointermove', e => {
+        const r = pz.getBoundingClientRect();
+        const mx = Math.max(-1, Math.min(1, (e.clientX - (r.left + r.width / 2)) / (r.width * .9)));
+        const my = Math.max(-1, Math.min(1, (e.clientY - (r.top + r.height / 2)) / (r.height * .9)));
+        pz.style.setProperty('--mx', mx.toFixed(3));
+        pz.style.setProperty('--my', my.toFixed(3));
       });
-      hero.addEventListener('pointerleave', () => { rxTo(0); ryTo(0); });
-    }
+      sec.addEventListener('pointerleave', () => { pz.style.setProperty('--mx', 0); pz.style.setProperty('--my', 0); });
+    });
   }
 
   /* ---------------------------------------------------------- dust motes */
@@ -265,10 +284,10 @@
     const st = { start: 'top 86%', toggleActions: 'play none none reverse' };
 
     $$('[data-reveal]').filter(el => !el.closest('.hero')).forEach(el => {
-      gsap.from(el, { y: 40, opacity: 0, filter: 'blur(10px)', duration: 1.4, ease: 'expo.out', scrollTrigger: { trigger: el, ...st } });
+      gsap.fromTo(el, { y: 40, opacity: 0, filter: 'blur(10px)' }, { y: 0, opacity: 1, filter: 'blur(0px)', duration: 1.4, ease: 'expo.out', clearProps: 'filter', scrollTrigger: { trigger: el, ...st } });
     });
     $$('[data-stagger]').forEach(el => {
-      gsap.from(el.children, { y: 30, opacity: 0, scale: .9, filter: 'blur(6px)', duration: 1.2, stagger: .07, ease: 'expo.out', scrollTrigger: { trigger: el, ...st } });
+      gsap.fromTo(el.children, { y: 30, opacity: 0, scale: .9, filter: 'blur(6px)' }, { y: 0, opacity: 1, scale: 1, filter: 'blur(0px)', duration: 1.2, stagger: .07, ease: 'expo.out', clearProps: 'filter', scrollTrigger: { trigger: el, ...st } });
     });
     $$('[data-write]').forEach(el => {
       gsap.fromTo(el, { clipPath: 'inset(-30% 100% -40% 0)' }, { clipPath: 'inset(-30% -10% -40% 0)', duration: 2.2, ease: 'power2.inOut', scrollTrigger: { trigger: el, start: 'top 85%', toggleActions: 'play none none reverse' } });
@@ -279,8 +298,9 @@
     });
 
     // about: skills panel rises like a tide
-    gsap.from('.skills', { y: 80, opacity: 0, duration: 1.6, ease: 'expo.out', scrollTrigger: { trigger: '.skills', start: 'top 90%' } });
-    gsap.from('.timeline li', { x: 30, opacity: 0, stagger: .15, duration: 1.2, ease: 'expo.out', scrollTrigger: { trigger: '.timeline', start: 'top 85%' } });
+    gsap.fromTo('.skills', { y: 80, opacity: 0 }, { y: 0, opacity: 1, duration: 1.6, ease: 'expo.out', scrollTrigger: { trigger: '.skills', start: 'top 92%' } });
+    gsap.fromTo('.timeline li', { x: 30, opacity: 0 }, { x: 0, opacity: 1, stagger: .15, duration: 1.2, ease: 'expo.out', scrollTrigger: { trigger: '.timeline', start: 'top 90%' } });
+    pzIntro($('.about .pz'), { scrollTrigger: { trigger: '.about__portrait', start: 'top 80%' } });
 
     // content scene — the orb wakes up
     const scene = gsap.timeline({ scrollTrigger: { trigger: '.content__scene', start: 'top 75%', toggleActions: 'play none none reverse' } });
@@ -360,18 +380,28 @@
     prevD: [],
     offset(i) { let d = (i - this.active + N) % N; if (d > N / 2) d -= N; return d; },
     layout(instant) {
+      // cards spread across the full width on big screens, overlap gently on phones
+      const vw = fanEl.clientWidth;
+      const cw = cards[0] ? cards[0].offsetWidth : 260;
       const phone = innerWidth <= 760;
-      const step = phone ? 15 : 12.5;
+      const angle = phone ? 9 : 6;
+      // keep the outermost (rotated) cards fully on screen
+      const outer = Math.floor(N / 2), rad = outer * angle * Math.PI / 180, sc = 1 - outer * .03;
+      const halfRot = (cw * Math.cos(rad) + cw * 1.43 * Math.sin(rad)) / 2 * sc;
+      const edge = Math.max(16, vw * .025);
+      const spread = phone ? cw * .5 : Math.max(cw * .5, (vw / 2 - halfRot - edge) / outer);
+      const arc = cw * (phone ? .05 : .045);
       cards.forEach((c, i) => {
         const d = this.offset(i), a = Math.abs(d);
         const wrapped = this.prevD[i] !== undefined && Math.abs(d - this.prevD[i]) > N / 2;
-        const tf = `rotate(${d * step}deg) translateY(${d === 0 ? (phone ? -18 : -34) : a * 4}px) scale(${d === 0 ? 1.1 : 1 - a * .035})`;
+        const y = d === 0 ? -cw * .1 : a * a * arc;
+        const tf = `translate(${(d * spread).toFixed(1)}px, ${y.toFixed(1)}px) rotate(${d * angle}deg) scale(${d === 0 ? 1.08 : 1 - a * .03})`;
         if (wrapped && !instant) {
           c.style.transition = 'none'; c.style.opacity = '0'; c.style.transform = tf;
           requestAnimationFrame(() => requestAnimationFrame(() => { c.style.transition = ''; c.style.opacity = ''; }));
         } else c.style.transform = tf;
         c.style.zIndex = 20 - a;
-        c.style.filter = `brightness(${1 - a * .055})`;
+        c.style.filter = `brightness(${1 - a * .045})`;
         c.classList.toggle('is-active', d === 0);
         c.setAttribute('aria-selected', String(d === 0));
         c.tabIndex = -1;
