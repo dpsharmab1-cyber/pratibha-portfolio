@@ -16,6 +16,10 @@ To show real work, add images to `assets/projects/<slug>/` and list them in that
 
 Cards: swipe/drag, arrow keys, the ← → buttons, or tap a side card to bring it forward. Tap the front card to open the project.
 
+## After editing CSS or JS
+
+Bump the `?v=` number on the `css/style.css`, `js/projects.js` and `js/main.js` links in `index.html` (any new number works), so visitors' browsers load the new files instead of a cached mix of old and new.
+
 ## Run locally
 
 ```bash

@@ -84,7 +84,7 @@
       .add(pzIntro($('.hero .pz')), 0)
       .from('.hero .deco, .hero__beads', { scale: 0, opacity: 0, duration: 1.4, stagger: .08, ease: 'back.out(2)' }, .8)
       .from('.hero__marquee', { yPercent: 100, duration: 1.4 }, .6)
-      .from('.nav', { y: -40, opacity: 0, duration: 1.2 }, .9);
+      .from('.nav__pill, .nav__contact, .nav__burger', { y: -30, opacity: 0, duration: 1.2, stagger: .08, clearProps: 'transform,opacity' }, .9);
   }
 
   /* ---------------------------------------------------------- layered portrait: assembles itself */
@@ -401,7 +401,7 @@
           requestAnimationFrame(() => requestAnimationFrame(() => { c.style.transition = ''; c.style.opacity = ''; }));
         } else c.style.transform = tf;
         c.style.zIndex = 20 - a;
-        c.style.filter = `brightness(${1 - a * .045})`;
+        c.style.filter = `brightness(${1 - a * .015})`;
         c.classList.toggle('is-active', d === 0);
         c.setAttribute('aria-selected', String(d === 0));
         c.tabIndex = -1;
