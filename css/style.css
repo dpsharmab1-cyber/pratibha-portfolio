@@ -3,7 +3,7 @@
    Palette from the Emotions Grain Pack · type from Figma
    ========================================================= */
 :root {
-  --paper: #F3F0E8;
+  --paper: #FFFFFF;
   --paper-2: #ECE7DC;
   --ink: #1E1E1E;
   --ink-2: #2A2A2A;
@@ -129,7 +129,7 @@ section { position: relative; }
 .nav.is-hidden { transform: translateY(-120%); }
 .nav__pill {
   position: relative; display: flex; gap: 4px; padding: 5px;
-  background: rgba(247, 244, 238, .78); border: 1px solid rgba(30, 30, 30, .1);
+  background: rgba(255, 255, 255, .8); border: 1px solid rgba(30, 30, 30, .1);
   border-radius: 40px; backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
   box-shadow: 0 10px 30px -18px rgba(30, 30, 30, .35);
 }
