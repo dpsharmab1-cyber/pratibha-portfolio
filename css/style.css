@@ -796,3 +796,11 @@ section { position: relative; }
   *, *::before, *::after { animation-duration: .001s !important; animation-iteration-count: 1 !important; transition-duration: .2s !important; }
   .grain { animation: none; }
 }
+
+/* resume downloads (19 Nov 2026) */
+.nav__contact { margin-left: auto; }
+.nav__resume { display: inline-flex; align-items: center; gap: 10px; margin-left: 10px; padding: 9px 9px 9px 20px; border-radius: 40px; background: var(--red); color: #fff; font: 700 13px/1 var(--sans); box-shadow: 0 10px 24px -12px rgba(201, 37, 44, .6); }
+.nav__resume .btn__ic { width: 24px; height: 24px; }
+.resume-dl { margin-top: 26px; }
+.footer__resume { margin-top: 12px; }
+@media (max-width: 760px) { .nav__resume { display: none; } }
